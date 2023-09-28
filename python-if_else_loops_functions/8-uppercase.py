@@ -7,4 +7,5 @@ def uppercase(str):
             let2 += lett_upper
         else:
             let2 += letters
-    return letters
+    print("{}".format(let2))
+    return let2

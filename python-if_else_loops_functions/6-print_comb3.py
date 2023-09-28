@@ -3,3 +3,5 @@ for i in range(0, 10):
     for j in range(i + 1, 10):
         n = i * 10 + j
         print("{:02}, ".format(n), end="")
+        if n == 89:
+            print("{:02} ".format(n), end="")

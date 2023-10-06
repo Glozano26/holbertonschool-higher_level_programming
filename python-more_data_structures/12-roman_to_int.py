@@ -11,6 +11,6 @@ def roman_to_int(roman_string):
             total = total - vlr
         else:
             total += vlr
-        
-        i = i + 1     
+
+    i = i + 1
     return total

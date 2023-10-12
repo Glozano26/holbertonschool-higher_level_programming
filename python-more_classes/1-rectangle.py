@@ -28,4 +28,3 @@ class Rectangle:
         assert isinstance(value, int), "height must be an integer"
         assert value >= 0, "height must be >= 0"
         self.__height = value
-

@@ -32,16 +32,16 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-        
+
     def area(self):
         return self.__width * self.__height
-        
+
     def perimeter(self):
         if self.width == 0 or self.height == 0:
             return 0
         else:
             return (self.__width * 2) + (self.__height * 2)
-            
+
     def __str__(self):
         if self.width == 0 or self.height == 0:
             return ""
@@ -51,4 +51,4 @@ class Rectangle:
                 str_rectangle += "#" * self.__width
                 if i < self.height - 1:
                     str_rectangle += "\n"
-            return str_rectangle            
+            return str_rectangle

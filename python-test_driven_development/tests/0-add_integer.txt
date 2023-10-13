@@ -1,63 +1,104 @@
-The ``0-add_integer.py`` module
+The ``0-add_integer`` module
 ======================
 
 Using ``add_integer``
 -------------------
 
+Importing method:
+
     >>> add_integer = __import__('0-add_integer').add_integer
 
 Now use it:
 
-    >>> add_integer(8, 2)
+Test for positive values.
+
+    >>> add_integer(10, 1)
+    11
+
+    >>> add_integer(10, 1.9)
+    11
+
+    >>> add_integer(10.1, 1.9)
+    12
+
+    >>> add_integer(10.5, 10.5)
+    21
+
+Test for negative values.
+
+    >>> add_integer(-10, -15)
+    -25
+
+    >>> add_integer(-10.5, -25.0)
+    -35
+
+    >>> add_integer(-10.5, -25.5)
+    -36
+
+    >>> add_integer(-15, -0)
+    -15
+
+Test for mix values (positive and negative)
+
+    >>> add_integer(15, -5)
     10
 
-    >>> add_integer(-8, 2)
-    -6
+    >>> add_integer(-6, 10.9)
+    4
 
-    >>> add_integer(8, 12.3)
-    20
+    >>> add_integer(-8, 8)
+    0
+    
+    >>> add_integer(36.5, -6.5)
+    30
 
-    >>> add_integer(-8, -2)
-    -10
+Test for not must be integer or float.
 
-    >>> add_integer(12.3, 8)
-    20
+    >>> add_integer(j, 10)
+    Traceback (most recent call last):
+    NameError: name 'j' is not defined
 
-    >>> add_integer(5.2, 3.2)
-    8
-
-    >>> add_integer(0, 6)
-    6
-
-    >>> add_integer(6, 0)
-    6
-
-    # a = None, b = int
-    >>> add_integer(None, 89)
+    >>> add_integer("j", 10)
     Traceback (most recent call last):
     TypeError: a must be an integer
 
-    # a = int, b = None
-    >>> add_integer(89, None)
+    >>> add_integer(10.5, "s")
     Traceback (most recent call last):
     TypeError: b must be an integer
 
-    # a = None
-    >>> add_integer(None)
+    >>> add_integer("holberton", "c is fun")
     Traceback (most recent call last):
     TypeError: a must be an integer
 
-    # a = str
-    >>> add_integer('puppy')
+Test for strange input.
+    >>> add_integer(int('j'), 10)
     Traceback (most recent call last):
-    TypeError: a must be an integer
+    ValueError: invalid literal for int() with base 10: 'j'
 
-    # a = int, b = str
-    >>> add_integer(5, 'doggo')
+    >>> add_integer(chr("j"), 10)
     Traceback (most recent call last):
-    TypeError: b must be an integer
+    TypeError: an integer is required (got type str)
+    
+    >>> add_integer(15, ord("p"))
+    127
 
-    # a = str, b = str
-    >>> add_integer('brekkie', 'dindin')
+    >>> add_integer(ord("hello"), 10.5)
     Traceback (most recent call last):
-    TypeError: a must be an integer
+    TypeError: ord() expected a character, but string of length 5 found
+
+Test for invalid length.
+
+    >>> add_integer(0)
+    98
+
+    >>> add_integer(0, 0, 15)
+    Traceback (most recent call last):
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+    >>> add_integer(15, 10.5, 25.6, 0)
+    Traceback (most recent call last):
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 4 were given
+
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'

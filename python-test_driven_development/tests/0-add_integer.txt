@@ -79,3 +79,7 @@ Now use it:
     >>> add_integer("holberton", 0)
     Traceback (most recent call last):
     TypeError: a must be an integer
+
+    >>> add_integer(89, 0)
+    Traceback (most recent call last):
+    TypeError: a must be an integer

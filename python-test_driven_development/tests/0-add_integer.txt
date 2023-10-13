@@ -35,7 +35,6 @@ Now use it:
     # a = None, b = int
     >>> add_integer(None, 89)
     Traceback (most recent call last):
-
     TypeError: a must be an integer
 
     # a = int, b = None

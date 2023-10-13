@@ -51,3 +51,15 @@ Now use it:
     >>> add_integer('puppy')
     Traceback (most recent call last):
     TypeError: a must be an integer
+
+    >>> add_integer(chr("j"), 10)
+    Traceback (most recent call last):
+    TypeError: an integer is required (got type str)
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(89, None)
+    Traceback (most recent call last):
+    TypeError: b must be an integer

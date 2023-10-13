@@ -11,7 +11,7 @@ def matrix_divided(matrix, div):
     Returns: integer sum
     """
     error_matriz = "matrix must be a matrix (list of lists) of integers/floats"
-
+    error_size = "Each row of the matrix must have the same size"
     if not isinstance(div, int) and not isinstance(div, float):
         raise TypeError("div must be a number")
     elif div == 0:
@@ -26,6 +26,5 @@ def matrix_divided(matrix, div):
 
         for x in matrix:
             if len(x) != column:
-                raise TypeError("Each row of the matrix must \
-                have the same size")
+                raise TypeError(error_size)
     return total

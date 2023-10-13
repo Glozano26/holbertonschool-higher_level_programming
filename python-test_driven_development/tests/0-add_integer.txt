@@ -1,0 +1,53 @@
+The ``0-add_integer.py`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+
+    >>> add_integer(8, 2)
+    10
+
+    >>> add_integer(-8, 2)
+    -6
+
+    >>> add_integer(8, 12.3)
+    20
+
+    >>> add_integer(-8, -2)
+    -10
+
+    >>> add_integer(12.3, 8)
+    20
+
+    >>> add_integer(5.2, 3.2)
+    8
+
+    >>> add_integer(0, 6)
+    6
+
+    >>> add_integer(6, 0)
+    6
+
+    >>> add_integer(0, 0, 15)
+    Traceback (most recent call last):
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+    >>> add_integer(15, 10.5, 25.6, 0)
+    Traceback (most recent call last):
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 4 were given
+
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: "a"
+
+    >>> add_integer(ord("hello"), 10.5)
+    Traceback (most recent call last):
+    TypeError: ord() expected a character, but string of length 5 found
+
+    >>> add_integer('puppy')
+    Traceback (most recent call last):
+    TypeError: a must be an integer

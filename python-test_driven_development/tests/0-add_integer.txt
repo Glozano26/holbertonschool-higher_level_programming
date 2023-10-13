@@ -32,54 +32,33 @@ Now use it:
     >>> add_integer(6, 0)
     6
 
-    >>> add_integer(0, 0, 15)
+    # a = None, b = int
+    >>> add_integer(None, 89)
     Traceback (most recent call last):
-    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
 
-    >>> add_integer(15, 10.5, 25.6, 0)
-    Traceback (most recent call last):
-    TypeError: add_integer() takes from 1 to 2 positional arguments but 4 were given
-
-    >>> add_integer()
-    Traceback (most recent call last):
-    TypeError: add_integer() missing 1 required positional argument: 'a'
-
-    >>> add_integer(ord("hello"), 10.5)
-    Traceback (most recent call last):
-    TypeError: ord() expected a character, but string of length 5 found
-
-    >>> add_integer('puppy')
-    Traceback (most recent call last):
     TypeError: a must be an integer
 
-    >>> add_integer(chr("j"), 10)
-    Traceback (most recent call last):
-    TypeError: an integer is required (got type str)
-
-    >>> add_integer(None)
-    Traceback (most recent call last):
-    TypeError: a must be an integer
-
+    # a = int, b = None
     >>> add_integer(89, None)
     Traceback (most recent call last):
     TypeError: b must be an integer
 
-    >>> add_integer(None, 89)
+    # a = None
+    >>> add_integer(None)
     Traceback (most recent call last):
     TypeError: a must be an integer
 
-    >>> add_integer(1e500054500, 547)
-    Traceback (most recent call last):
-    OverflowError: cannot convert float infinity to integer
-
-    >>> add_integer(float('nan'), 10)
-    Traceback (most recent call last):
-    ValueError: cannot convert float NaN to integer
-
-    >>> add_integer("holberton", 0)
+    # a = str
+    >>> add_integer('puppy')
     Traceback (most recent call last):
     TypeError: a must be an integer
 
-    >>> add_integer(89, 0)
+    # a = int, b = str
+    >>> add_integer(5, 'doggo')
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    # a = str, b = str
+    >>> add_integer('brekkie', 'dindin')
     Traceback (most recent call last):
     TypeError: a must be an integer

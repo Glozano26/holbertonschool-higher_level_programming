@@ -7,13 +7,21 @@ def text_indentation(text):
     these characters: ., ? and :
     """
     symbols = ".?:"
-    result = []
+    result = ""
 
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     for char in text:
-        result.append(char)
-        if char in symbols:
-            result.append("\n\n")
-
-    print("".join(result))
+        if char == symbols:
+            if char == " ":
+                pass
+            else:
+                char = ""
+                print(char, end="")
+                pass
+        if char == symbols:
+            print(char)
+            print("")
+            result = char
+        else:
+            print(char, end="")

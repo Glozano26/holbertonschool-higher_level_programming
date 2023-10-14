@@ -23,4 +23,3 @@ def text_indentation(text):
             esp_ch = a_char
         else:
             print(a_char, end="")
-    

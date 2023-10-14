@@ -6,7 +6,7 @@ def text_indentation(text):
     """unction that prints a text with 2 new lines after each of
     these characters: ., ? and :
     """
-    symbols = ".?:"
+    symbols = [".", "?", ":"]
     result_esp = ""
 
     if not isinstance(text, str):

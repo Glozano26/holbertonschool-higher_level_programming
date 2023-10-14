@@ -22,6 +22,6 @@ def text_indentation(text):
         if char == symbols:
             print(char)
             print("")
-            result = char
+            result_esp = char
         else:
             print(char, end="")

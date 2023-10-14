@@ -9,7 +9,7 @@ def text_indentation(text):
     symbols = [".", "?", ":"]
     result_esp = ""
 
-    if not isinstance(text, str):
+    if is not isinstance(text, str):
         raise TypeError("text must be a string")
     for char in text:
         if char == symbols:

@@ -7,7 +7,7 @@ def text_indentation(text):
     these characters: ., ? and :
     """
     symbols = ".?:"
-    result = ""
+    result_esp = ""
 
     if not isinstance(text, str):
         raise TypeError("text must be a string")
@@ -16,7 +16,7 @@ def text_indentation(text):
             if char == " ":
                 pass
             else:
-                char = ""
+                result_esp = ""
                 print(char, end="")
                 pass
         if char == symbols:

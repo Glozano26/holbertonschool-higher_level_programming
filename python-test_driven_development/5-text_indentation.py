@@ -14,6 +14,6 @@ def text_indentation(text):
     for char in text:
         result.append(char)
         if char in symbols:
-            result.append("\n")
+            result.append("\n\n")
 
     print("".join(result))

@@ -1,17 +1,15 @@
 #!/usr/bin/python3
+"""Rectangle"""
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 """Geometry module"""
-class BaseGeometry:
-    """Write an empty class BaseGeometry."""
-    def area(self):
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        if type(value) is not int:
-            raise TypeError("{:s} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{:s} must be greater than 0".format(name))
 
 class Rectangle(BaseGeometry):
+    """Definition of the class Rectangle using the BaseGometry"""
     def __init__(self, width, height):
+        """width and height must be private. No getter or setter
+        width and height must be positive integers, validated by integer_validator
+        """
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width
         self.__height = height

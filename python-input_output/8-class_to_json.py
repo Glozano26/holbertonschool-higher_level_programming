@@ -1,8 +1,14 @@
 #!/usr/bin/python3
-"""Create object from a JSON file""
+"""function that returns the dictionary description with simple data structure
+"""
 
 
 def class_to_json(obj):
-    """ function that creates an Object from a “JSON file”
-    """
+    """function that returns the dictionary description with
+        simple data structure
+        Args:
+            obj : object
+        Return:
+            Object
+        """
     return obj.__dict__

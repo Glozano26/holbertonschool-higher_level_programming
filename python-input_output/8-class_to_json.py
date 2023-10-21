@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Create object from a JSON file"""
-import json
+"""Create object from a JSON file""
 
 
 def class_to_json(obj):

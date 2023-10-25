@@ -35,8 +35,8 @@ class Square(Rectangle):
                 setattr(self, name, value)
 
     def to_dictionary(self):
-        """Rectangle instance to dictionary representation"""
-        claves = ["id", "size", "x", "y"]
-        value = [self.id, self.width, self.height, self.x, self.y]
+        """Square instance to dictionary representation"""
+        claves = ["id", "x", "size", "y"]
+        value = [self.id, self.x, self.size, self.y]
         my_dict = dict(zip(claves, value))
         return my_dict

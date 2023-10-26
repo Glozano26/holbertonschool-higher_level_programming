@@ -49,3 +49,9 @@ class Base:
             return json.loads(json_string)
         else:
             return list_empty
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Dictionary to Instance"""
+        new_inst = cls(**dictionary)
+        return new_inst

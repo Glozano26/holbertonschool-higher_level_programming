@@ -24,3 +24,13 @@ class Base:
         else:
             my_dict = json.dumps(list_dictionaries)
             return my_dict
+
+    @staticmethod
+    def save_to_file(cls, list_objs):
+        """JSON string to file"""
+        json_list = []
+        if list_objs is not None:
+            json_str = Base.to_json_string(cls, list_objs)
+            json_file = open("cls.__name__", "w")
+            json_file.write(json_str)
+            json_file.close()

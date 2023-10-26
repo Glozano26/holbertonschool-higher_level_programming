@@ -16,10 +16,10 @@ class Base:
             self.id = Base.__nb_objects
 
     def to_json_string(list_dictionaries):
-        """JSON is one of the standard formats for sharing data representation"""
+        """JSON is one of the standard formats
+        for sharing data representation"""
         if list_dictionaries is None or list_dictionaries == "":
-            my_dict = json.loads(list_dictionaries)
-            return my_dict
+            print(str(list_dictionaries))
         else:
             my_dict = json.dumps(list_dictionaries)
             return my_dict

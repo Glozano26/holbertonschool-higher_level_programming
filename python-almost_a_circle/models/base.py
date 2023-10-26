@@ -40,3 +40,12 @@ class Base:
                 list_dicts_python.append(lst.to_dictionary())
         with open(class_name, "w+", encoding="utf-8") as a_file:
             a_file.write(cls.to_json_string(list_dicts_python))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """JSON string to dictionary"""
+        if json_string is None or len(json_string) == 0:
+            return "[]"
+        else:
+            my_json = json.loads(json_string)
+            return my_json

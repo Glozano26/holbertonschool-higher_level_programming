@@ -53,5 +53,6 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Dictionary to Instance"""
-        new_inst = cls(**dictionary)
+        new_inst = cls(1, 1)
+        new_inst.update(**dictionary)
         return new_inst

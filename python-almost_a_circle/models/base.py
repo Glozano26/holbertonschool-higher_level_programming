@@ -44,8 +44,9 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """JSON string to dictionary"""
+        list_empy = "[]"
         if json_string is None or len(json_string) == 0:
-            return "[]"
+            return list_empty
         else:
             my_json = json.loads(json_string)
             return my_json

@@ -46,7 +46,5 @@ class Base:
         """JSON string to dictionary"""
         list_empty = "[]"
         if json_string is None or len(json_string) == 0:
-            return list_empty
-        else:
-            list_empty = json.loads(json_string)
-            return list_empty
+            return json.loads(json_string)
+        return list_empty

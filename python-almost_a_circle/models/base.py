@@ -47,4 +47,5 @@ class Base:
         list_empty = []
         if json_string is not None:
             return json.loads(json_string)
-        return list_empty
+        else:
+            return list_empty

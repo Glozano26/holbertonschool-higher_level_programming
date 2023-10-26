@@ -21,5 +21,5 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
-            my_dict = json.dumps(list_dictionaries, sort_keys=True)
+            my_dict = json.dumps(list_dictionaries)
             return my_dict

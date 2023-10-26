@@ -48,5 +48,5 @@ class Base:
         if json_string is None or len(json_string) == 0:
             return list_empty
         else:
-            my_json = json.loads(json_string)
-            return my_json
+            list_empty = json.loads(json_string)
+            return list_empty

@@ -142,7 +142,7 @@ class TestBasepep8(unittest.TestCase):
         """test for base file and test_base file pep8"""
         style = pep8.StyleGuide(quiet=True)
         base = "models/base.py"
-        test_base = "tests/test_models/test_base.py"
+        test_base = "tests/test_base.py"
         result = style.check_files([base, test_base])
         self.assertNotEqual(result.total_errors, 0)
 

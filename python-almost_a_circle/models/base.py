@@ -56,3 +56,14 @@ class Base:
         new_inst = cls(1, 1) if cls.__name__ == "Rectangle" else cls(1)
         new_inst.update(**dictionary)
         return new_inst
+
+    @classmethod
+    def load_from_file(cls):
+        """File to instances"""
+        list_ret = []
+        class_name = cls.__name__ + ".json"
+        with open(class_name, mode="r") as file:
+            list_ret_print = cls.from_json_string(file.read())
+            for objt in list_ret_print:
+                list_ret.append(cls.create(**objt))
+        return list_ret

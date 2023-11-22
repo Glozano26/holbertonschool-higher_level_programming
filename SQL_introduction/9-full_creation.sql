@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS second_table (
 
 INSERT INTO second_table
 VALUES
-(1, 'Juan', 10),
-(2, 'Álex', 3),
-(3, 'Bob', 14),
-(4, 'Jorge', 8);
+    (1, 'Juan', 10),
+    (2, 'Álex', 3),
+    (3, 'Bob', 14),
+    (4, 'Jorge', 8);

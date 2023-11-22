@@ -1,2 +1,2 @@
 -- Score too low
-DELETE FROM score <= 5 WHERE second_table;
+DELETE FROM second_table WHERE score <= 5;

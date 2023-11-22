@@ -1,5 +1,5 @@
 #!/bin/bash
 -- Full description
-TABLE first_table (
-    SELECT hbtn_0c_0
+SELECT first_table (
+    DATABASE hbtn_0c_0
 );

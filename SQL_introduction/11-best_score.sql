@@ -1,2 +1,2 @@
 -- Select the best
-SELECT * FROM second_table WHERE age > 8;
+SELECT * FROM hbtn_0c_0 WHERE age > 8;

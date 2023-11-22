@@ -1,5 +1,5 @@
 -- Number by score
-SELECT score AS "n_score",
-COUNT(score) AS "times_scored"
+SELECT score AS "score",
+COUNT(score) AS "number"
 FROM second_table
 GROUP BY score;

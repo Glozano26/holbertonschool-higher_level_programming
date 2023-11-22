@@ -2,4 +2,4 @@
 
 -- first script mysql
 
-SELECT * FROM users;
+SHOW DATABASES;

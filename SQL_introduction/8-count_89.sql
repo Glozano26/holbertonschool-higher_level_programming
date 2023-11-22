@@ -1,3 +1,3 @@
 -- Count 89
-SELECT COUNT (id)
-FROM first_table WHERE hbtn_0c_0;
+SELECT COUNT (*)
+FROM first_table WHERE id = 89;

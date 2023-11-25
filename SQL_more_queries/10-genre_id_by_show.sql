@@ -5,7 +5,7 @@
 -- Each record should display: tv_shows.title - tv_show_genres.genre_id
 -- Results must be sorted in ascending order by tv_shows.title and tv_show_genres.genre_id
 -- You can use only one SELECT statement
-mysql -u root -p tu_base_de_datos -e 
+mysql -u root -p hbtn_0d_tvshows -e 
 SELECT tv_shows.title, tv_show_genres.genre_id
 FROM tv_shows
 INNER JOIN tv_show_genres ON tv_shows.id = tv_show_genres.show_id

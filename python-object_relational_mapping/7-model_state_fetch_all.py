@@ -2,21 +2,23 @@
 """ All states via SQLAlchemy"""
 import sqlalchemy
 from model_state import Base, State
-from sqlalchemy import create_engine
+from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 import sys
 
+
 def list_states(username, password, hbtn):
     """funcion para listar los estados"""
-    engine = create_engine('mysql+pymysql://glozano26:root@localhost:3306/hbtn_0e_6_usa', echo=False)
+    engine = create_engine(
+        f'mysql+mysqlconnector://{username}:{password}@localhost:3306/{hbtn}')
     Session = sessionmaker(bind=engine)
     session = Session()
-    
+
     states = session.query(State).order_by(State.id)
-    
+
     for state in states:
-        print('{}: {}'.format(state.id, state.name))
-        
+        print(f"{state.id}: {state.name}")
+
     session.close()
 
 

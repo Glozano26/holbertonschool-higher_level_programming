@@ -14,7 +14,8 @@ def list_states(username, password, hbtn):
     rows = cur.fetchall()
 
     for row in rows:
-        print(row)
+        if row[1][0] == "N":
+            print(row)
 
     cur.close()
     db.close()

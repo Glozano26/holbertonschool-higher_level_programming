@@ -2,7 +2,7 @@
 """ All states via SQLAlchemy"""
 import sqlalchemy
 from model_state import Base, State
-from sqlalchemy import (create_engine)
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import sys
 
@@ -11,6 +11,9 @@ def list_states(username, password, hbtn):
     """funcion para listar los estados"""
     engine = create_engine(
         f'mysql+mysqlconnector://{username}:{password}@localhost:3306/{hbtn}')
+
+    Base.metadata.create_all(engine)
+
     Session = sessionmaker(bind=engine)
     session = Session()
 
@@ -18,8 +21,6 @@ def list_states(username, password, hbtn):
 
     for state in states:
         print(f"{state.id}: {state.name}")
-
-    session.close()
 
 
 if __name__ == '__main__':

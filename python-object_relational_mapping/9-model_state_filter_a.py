@@ -5,6 +5,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import sys
 
+
 def list_states(username, password, hbtn):
     """funcion para listar los estados"""
     engine = create_engine(
@@ -19,6 +20,7 @@ def list_states(username, password, hbtn):
         print(f"{state.id}: {state.name}")
 
     session.close()
+
 
 if __name__ == '__main__':
     """Get arguments  from command-line"""

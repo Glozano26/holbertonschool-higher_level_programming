@@ -12,7 +12,6 @@ def list_states(username, password, hbtn):
     engine = create_engine(
         f'mysql+mysqldb://{username}:{password}@localhost:3306/{hbtn}')
 
-
     Session = sessionmaker(bind=engine)
     session = Session()
 

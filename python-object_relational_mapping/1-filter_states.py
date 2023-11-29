@@ -6,7 +6,7 @@ import sys
 
 def list_states(username, password, hbtn):
     """aqui se conceta con la base de datos"""
-    db = MySQLdb.connect(host="localhost", port=3306, user=username,
+    db = MySQLdb.connect(host='localhost', port=3306, user=username,
                          passwd=password, db=hbtn)
     cur = db.cursor()
 

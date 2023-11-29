@@ -6,8 +6,8 @@ import sys
 
 def list_states(username, password, hbtn):
     """aqui se conceta con la base de datos"""
-    db = MySQLdb.connect(host='localhost', port=3306, user=username,
-                         passwd=password, db=hbtn)
+    db = MySQLdb.connect(host="localhost", port=3306, user=username,
+                         passwd=password, db=hbtn, charset="utf8")
     cur = db.cursor()
 
     cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")

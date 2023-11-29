@@ -10,9 +10,8 @@ import sys
 def list_states(username, password, hbtn):
     """funcion para listar los estados"""
     engine = create_engine(
-        f'mysql+mysqlconnector://{username}:{password}@localhost:3306/{hbtn}')
+        f'mysql+mysqldb://{username}:{password}@localhost:3306/{hbtn}')
 
-    Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()

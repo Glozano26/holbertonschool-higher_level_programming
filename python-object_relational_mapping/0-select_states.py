@@ -6,7 +6,7 @@ def list_states(username, password, hbtn):
     db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=hbtn)
     cur = db.cursor()
     
-    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
     rows = cur.fetchall()
     
     for row in rows:

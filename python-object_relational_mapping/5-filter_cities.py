@@ -16,14 +16,14 @@ def list_states(username, password, hbtn, state):
     ORDER BY cities.id ASC")
 
     rows = cur.fetchall()
-    count = 1
+
     for count, row in enumerate(rows):
         if count < len(rows) - 1:
             print('{},'.format(row[0]), end=" ")
         else:
             print('{}'.format(row[0]), end="")
-    print("")
 
+    print("")
 
     cur.close()
     db.close()

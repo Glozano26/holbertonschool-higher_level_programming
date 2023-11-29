@@ -4,7 +4,7 @@ import MySQLdb
 import sys
 
 
-def list_states(username, password, hbtn, state):
+def list_states(username, password, hbtn, state_name):
     """aqui se conceta con la base de datos"""
     db = MySQLdb.connect(host="localhost", port=3306, user=username,
                          passwd=password, db=hbtn)
@@ -12,8 +12,8 @@ def list_states(username, password, hbtn, state):
 
     cur.execute("SELECT cities.name \
     FROM cities JOIN states ON cities.state_id = states.id\
-    WHERE states.name = 'Texas'\
-    ORDER BY cities.id ASC")
+    WHERE states.name =  %s \
+    ORDER BY cities.id ASC", (state_name,))
 
     rows = cur.fetchall()
 
@@ -32,5 +32,5 @@ def list_states(username, password, hbtn, state):
 if __name__ == '__main__':
     """Get arguments  from command-line"""
     username, password = sys.argv[1], sys.argv[2]
-    hbtn, state = sys.argv[3], sys.argv[4]
-    list_states(username, password, hbtn, state)
+    hbtn, state_name = sys.argv[3], sys.argv[4]
+    list_states(username, password, hbtn, state_name)

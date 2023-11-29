@@ -1,5 +1,7 @@
 #!/usr/bin/python3
+"""A script to list states from database hbtn_0e_0_usa."""
 import MySQLdb
+import sys
 
 def list_states(username, password, hbtn):
     #aqui se conceta con la base de datos
@@ -16,4 +18,6 @@ def list_states(username, password, hbtn):
     db.close()
     
 if __name__ == '__main__':
-    list_states()
+    """Get arguments  from command-line"""
+    username, password, hbtn = sys.argv[1], sys.argv[2], sys.argv[3]
+    list_states(username, password, hbtn)

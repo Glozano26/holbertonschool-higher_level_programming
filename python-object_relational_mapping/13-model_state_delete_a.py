@@ -14,12 +14,13 @@ def list_states(username, password, hbtn):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    new_state = State(name="Louisiana")
-    session.add(new_state)
-    session.commit()
-
+    states = session.query(State).filter(State.name.like('%a%')).all()
     
+    for state in states:
+        session.delete(state)
+        print(f"{state.id}: {state.name}")
 
+    session.commit()
     session.close()
 
 

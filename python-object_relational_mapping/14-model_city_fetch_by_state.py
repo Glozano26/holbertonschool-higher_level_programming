@@ -9,18 +9,6 @@ import sys
 
 def list_states(username, password, hbtn):
     """funcion para listar los estados"""
-    """
-    # engine = create_engine(f'mysql+mysqldb://{username}:{password}@localhost:3306/{hbtn}')
-    
-    Base.metadata.create_all(engine)
-    
-    Session = sessionmaker(bind=engine)
-    session = Session()
-    
-    states_citys = session.query(City, State).join(State).all()
-    
-    for city, state in states_citys:
-        print(f"{state.name}: {city.id} {city.name}")"""
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(username, password, hbtn))
@@ -34,6 +22,7 @@ def list_states(username, password, hbtn):
 
     for city, state in citys_and_states:
         print('{}: ({}) {}'.format(state.name, city.id, city.name))
+
 
 if __name__ == '__main__':
     """Get arguments  from command-line"""

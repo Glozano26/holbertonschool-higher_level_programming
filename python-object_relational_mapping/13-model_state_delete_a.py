@@ -15,7 +15,7 @@ def list_states(username, password, hbtn):
     session = Session()
 
     states = session.query(State).filter(State.name.like('%a%')).all()
-    
+
     for state in states:
         session.delete(state)
         print(f"{state.id}: {state.name}")

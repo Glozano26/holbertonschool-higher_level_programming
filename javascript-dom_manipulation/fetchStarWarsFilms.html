@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Wars Films</title>
+</head>
+<body>
+
+<h1>Star Wars Films</h1>
+<div id="films-list"></div>
+<div id="other-data"></div>
+
+<script>
+  // Función que realiza la solicitud y devuelve una promesa con los datos
+  
+  async function fetchStarWarsFilms() {
+      try {
+        const response = await fetch('https://swapi-api.hbtn.io/api/films/');
+        const data = await response.json();
+        return(data.results);
+      } catch (error) {
+        return (error);
+      }
+  }
+
+  // Función que realiza otra tarea asincrónica (simulada con un temporizador)
+  function simulateAsyncTask() {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve('Other data resolved after 3 seconds');
+      }, 5000);
+    });
+  }
+
+  // Función que muestra la información de las películas en la página
+  function displayFilms(films) {
+    const filmsList = document.getElementById('films-list');
+
+    films.forEach(film => {
+      const filmElement = document.createElement('div');
+      filmElement.innerHTML = `
+        <h2>${film.title}</h2>
+        <p>Director: ${film.director}</p>
+        <p>Release Date: ${film.release_date}</p>
+        <p>Opening Crawl: ${film.opening_crawl}</p>
+        <hr>
+      `;
+      filmsList.appendChild(filmElement);
+    });
+  }
+
+  // Función que muestra otra información asincrónica en la página
+  function displayOtherData(data) {
+    const otherDataElement = document.getElementById('other-data');
+    otherDataElement.innerHTML = `<p>${data}</p>`;
+  }
+
+  // Lógica principal usando múltiples funciones asincrónicas
+  async function main() {
+    try {
+      // Ejecuta ambas funciones asincrónicas simultáneamente
+      console.log(fetchStarWarsFilms());
+      const [films, otherData] = await Promise.all([fetchStarWarsFilms(), simulateAsyncTask()]);
+
+      // Muestra los resultados
+      displayFilms(films);
+      displayOtherData(otherData);
+    } catch (error) {
+      console.error('Error fetching and displaying data:', error);
+    }
+  }
+
+  // Llama a la función principal
+  main();
+</script>
+
+</body>
+</html>
